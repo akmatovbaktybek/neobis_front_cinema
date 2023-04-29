@@ -154,3 +154,12 @@ ul {
 .movie__rating--orange {
    border: 2px solid #FF9B0E;
 }
+
+.flex-center {
+   justify-content: center;
+}
+
+.not-ready {
+   font-size: 70px;
+   font-weight: 700;
+}
