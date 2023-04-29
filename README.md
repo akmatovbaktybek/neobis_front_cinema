@@ -2,7 +2,7 @@
 ---
 ### Ссылка: [клик](https://akmatovbaktybek.github.io/neobis_front_cinema/)
 ---
-![](img/prew.jpg)
+![](images/prew.jpg)
 ---
 ### Сборка репозитория и локальный запуск:
 ---
