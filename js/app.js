@@ -61,7 +61,7 @@ form.addEventListener("submit", (e) => {
 
    const searchApiUrl = `${API_URL_SEARCH}${searchInput.value}`;
    if (searchInput.value) {
-      getMovies(searchApiUrl);
+      getFilms(searchApiUrl);
    }
    searchInput.value = "";
 })
