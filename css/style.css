@@ -156,3 +156,27 @@ ul {
 .movie__rating--orange {
    border: 2px solid #FF9B0E;
 }
+
+@media screen and (max-width: 768px) {
+   .header__content  {
+      flex-direction: column;
+   }
+
+   .header__nav {
+      margin: 15px 0;
+   }
+
+   .main__movies {
+      justify-content: center;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .header__nav {
+      flex-direction: column;
+   }
+
+   .header__nav-item {
+      margin-top: 5px;
+   }
+}
