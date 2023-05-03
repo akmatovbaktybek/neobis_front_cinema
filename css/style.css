@@ -58,6 +58,8 @@ ul {
 
 .header__nav-item {
    margin-left: 15px;
+   color: #fff;
+   cursor: pointer;
 }
 
 .header__search {
@@ -128,8 +130,8 @@ ul {
 }
 
 .movie__rating {
-   width: 35px;
-   height: 35px;
+   width: 45px;
+   height: 45px;
    background-color: #fff;
    position: absolute;
    top: 10px;
@@ -140,7 +142,7 @@ ul {
    align-items: center;
    border-radius: 50%;
    color: #000;
-   font-size: 15px;
+   font-size: 14px;
 }
 
 .movie__rating--green {
@@ -153,13 +155,4 @@ ul {
 
 .movie__rating--orange {
    border: 2px solid #FF9B0E;
-}
-
-.flex-center {
-   justify-content: center;
-}
-
-.not-ready {
-   font-size: 70px;
-   font-weight: 700;
 }
