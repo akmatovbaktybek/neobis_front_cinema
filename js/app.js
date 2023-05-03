@@ -15,9 +15,9 @@ const API_URL_RELEASES = "https://kinopoiskapiunofficial.tech/api/v2.1/films/rel
 const API_URL_SEARCH = "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=";
 
 
-getFilms(API_URL_TOP_100);
+getMovies(API_URL_TOP_100);
 
-async function getFilms(url) {
+async function getMovies(url) {
    const response = await fetchMovies(url)
    console.log(response);
    showMovies(response.films);
@@ -61,45 +61,45 @@ form.addEventListener("submit", (e) => {
 
    const searchApiUrl = `${API_URL_SEARCH}${searchInput.value}`;
    if (searchInput.value) {
-      getFilms(searchApiUrl);
+      getMovies(searchApiUrl);
    }
    searchInput.value = "";
 })
 
 await.addEventListener('click', (e) => {
    e.preventDefault();
-   async function getFilmsAwait(url) {
+   async function getMoviesAwait(url) {
       const response = await fetchMovies(url)
       showMovies(response.items);
    }
-   getFilmsAwait(API_URL_AWAIT);
+   getMoviesAwait(API_URL_AWAIT);
 })
 
 best.addEventListener('click', (e) => {
    e.preventDefault();
-   async function getFilms(url) {
+   async function getMovies(url) {
       const response = await fetchMovies(url)
       showMovies(response.films);
    }
-   getFilms(API_URL_TOP_100);
+   getMovies(API_URL_TOP_100);
 })
 
 premiere.addEventListener('click', (e) => {
    e.preventDefault();
-   async function getFilmsPremiere(url) {
+   async function getMoviesPremiere(url) {
       const response = await fetchMovies(url)
       showMovies(response.items);
    }
-   getFilmsPremiere(API_URL_PREMIER);
+   getMoviesPremiere(API_URL_PREMIER);
 })
 
 release.addEventListener('click', (e) => {
    e.preventDefault();
-   async function getFilmsDigital(url) {
+   async function getMoviesDigital(url) {
       const response = await fetchMovies(url)
       showMovies(response.releases);
    }
-   getFilmsDigital(API_URL_RELEASES);
+   getMoviesDigital(API_URL_RELEASES);
 })
 
 
