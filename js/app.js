@@ -19,7 +19,6 @@ getMovies(API_URL_TOP_100);
 
 async function getMovies(url) {
    const response = await fetchMovies(url)
-   console.log(response);
    showMovies(response.films);
 }
 
@@ -39,18 +38,35 @@ function showMovies(data) {
 
    data.forEach((movie) => {
       const movieItem = document.createElement("div");
+
+      const isRating = () => {
+         if (movie.rating == undefined) {
+            return ''
+         } else {
+            return `<div class="movie__rating">${movie.rating}</div>`;
+         }
+      }
+
       movieItem.classList.add("main__movie");
       movieItem.innerHTML = `
-         <div class="movie__content">
+      <div class="movie__content">
          <img src="${movie.posterUrl}" alt="${movie.nameRu}" class="movie__poster">
          <div class="movie__poster--dark"></div>
       </div>
       <div class="movie__info">
          <div class="movie__title">${movie.nameRu} (${movie.year})</div>
-         <div class="movie__genre">${movie.genres.map((genre) =>
+         <div class="movie__genre">
+         ${movie.genres.map((genre) =>
          ` ${genre.genre}`
-      )}</div>
-      <div class="movie__rating">${movie.rating}</div>
+      )}
+         </div>
+
+         ${`
+            ${isRating()}
+         `
+         }
+
+      </div>
       `
       moviesContainer.appendChild(movieItem);
    });
@@ -71,6 +87,8 @@ await.addEventListener('click', (e) => {
    async function getMoviesAwait(url) {
       const response = await fetchMovies(url)
       showMovies(response.items);
+      console.log(await response.items);
+
    }
    getMoviesAwait(API_URL_AWAIT);
 })
@@ -79,6 +97,7 @@ best.addEventListener('click', (e) => {
    e.preventDefault();
    async function getMovies(url) {
       const response = await fetchMovies(url)
+      console.log(await response.films);
       showMovies(response.films);
    }
    getMovies(API_URL_TOP_100);
@@ -98,6 +117,7 @@ release.addEventListener('click', (e) => {
    async function getMoviesDigital(url) {
       const response = await fetchMovies(url)
       showMovies(response.releases);
+      console.log(await response.releases);
    }
    getMoviesDigital(API_URL_RELEASES);
 })
